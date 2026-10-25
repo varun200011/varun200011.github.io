@@ -683,6 +683,11 @@ nav.on{opacity:1;transform:none}
   #proj-pin{grid-template-columns:0 1fr 0}
   .pl,.pr{display:none}
 }
+.hr-badge{display:inline-flex;align-items:center;gap:.7rem;margin:.7rem 0 1rem;padding:.75rem 1rem;border:1px solid #c59824;border-radius:8px;background:#f8d76b;color:#392c08;transition:transform .2s,box-shadow .2s}
+.hr-badge strong{display:block;font-size:.82rem;line-height:1.4}
+.hr-badge small{display:block;font-size:.65rem;line-height:1.5;letter-spacing:.025em}
+.hr-badge:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(197,152,36,.2)}
+.hr-badge:focus-visible{outline:2px solid var(--white);outline-offset:4px}
 </style>
 </head>
 <body>
@@ -814,7 +819,7 @@ if(!localStorage.getItem('theme')){
 
   </div>
   <div class="ab-body-col">
-    <p class="ab-p rv">I'm <b>Varun Nataraj Alagappan</b> — a Python and Java full-stack Software Engineer at Visteon, Chennai. I build scalable backend services with <b>Python, FastAPI, Java, Spring Boot and Node.js</b>, and responsive frontend applications with <b>React, TypeScript, HTML and CSS</b>.</p>
+    <p class="ab-p rv">I'm <b>Varun Nataraj Alagappan</b> — a Python and Java full-stack Software Engineer 2 at Visteon, Chennai. I build scalable backend services with <b>Python, FastAPI, Java, Spring Boot and Node.js</b>, and responsive frontend applications with <b>React, TypeScript, HTML and CSS</b>.</p>
     <p class="ab-p rv" style="transition-delay:.08s">I work end-to-end across API design, databases, asynchronous processing, UI development, automated testing and deployment. At Visteon, I engineer <b>V-RoboBus</b>, a production CAN/CAN-FD diagnostics platform that combines REST APIs, WebSockets, worker threads and native hardware integration. I also won <b>Best Team at Gear Up Hackathon</b> among 100+ teams.</p>
     <div class="tags rv" style="transition-delay:.12s">
       <span class="tg">C</span><span class="tg">C++</span><span class="tg">Python</span><span class="tg">Java</span><span class="tg">JavaScript</span><span class="tg">TypeScript</span><span class="tg">Kotlin</span><span class="tg">SQL</span><span class="tg">Spring Boot</span><span class="tg">React.js</span><span class="tg">Node.js</span><span class="tg">FastAPI</span><span class="tg">REST APIs</span><span class="tg">WebSockets</span><span class="tg">AWS</span><span class="tg">Docker</span><span class="tg">Kubernetes</span>
@@ -825,17 +830,35 @@ if(!localStorage.getItem('theme')){
 
     <div class="exp rv" style="transition-delay:.16s">
       <div class="exp-co">Visteon Technical and Services Pvt Ltd · Chennai</div>
-      <div class="exp-role">Software Engineer</div>
+      <div class="exp-role">Software Engineer 2</div>
       <div class="exp-yr">Jan 2024 — Present</div>
       <ul class="exp-list">
-        <li>Engineered <b>V-RoboBus</b>, a production multi-channel CAN/CAN-FD platform with live tracing, signal simulation, UDS diagnostics, DBC/CDD parsing, Vector/PCAN integration and responsive day/night interfaces</li>
-        <li>Designed asynchronous diagnostic and trace workflows with <b>REST APIs, WebSockets, worker threads and event-driven updates</b>, improving UI responsiveness, runtime stability and hardware-resource cleanup</li>
-        <li>Architected a next-generation diagnostic and CAPL-generation platform with <b>Java 21, Spring Boot microservices and React</b>, parsing Excel/CDD inputs and packaging independently deployable services with an API gateway and <b>Docker Compose</b></li>
-        <li>Built reusable <b>Robot Framework</b> libraries and Python automation using data structures and algorithms, improving test automation efficiency by <b>98%</b> and reducing manual engineering effort by <b>95%</b></li>
-        <li>Implemented UDS features including ISO-TP multi-frame communication, tester-present scheduling, NRC handling and configurable security-unlock algorithms for project-specific ECU validation</li>
-        <li>Developed zero-touch Bluetooth and Wi-Fi pairing automation with Python, Appium, ADB and a Kotlin/Google ML Kit OCR application for autonomous passkey extraction</li>
-        <li>Worked in Agile delivery cycles, debugging production issues, writing automated tests and collaborating across software, validation and hardware teams</li>
+        <li>Architected and deployed <b>NexDiag to production</b> with Java 21, Spring Boot, Apache POI and XML parsing for CAPL/Robot generation from Excel/CDD requirements; adopted by <b>90% of automation/validation teams</b>; monitor production incidents and application logs.</li>
+        <li>Built <b>automatic per-test-case CAN logging</b> in generated CAPL suites: each test writes its own .asc file with timestamped Tx/Rx frames and PASS/FAIL results; integrated REQ/RSP timestamps into an offline report tool.</li>
+        <li>Added <b>Electron project persistence with embedded SQLite (sql.js/WebAssembly)</b>: autosaved DID tables, uploaded sheets and settings; maintained version history, restored the last project on startup, and enabled .nexdiag export/import with merge for multi-engineer collaboration.</li>
+        <li>Implemented token-based authentication, persistent generated scripts and metadata, and per-test-case execution event logs in NexDiag.</li>
+        <li>Led <b>Unified GUI</b> development with React, TypeScript, Electron and FastAPI; containerized services with Docker/Kubernetes, supported Linux deployments and investigated production incidents; achieved <b>95% team adoption and 90% less manual effort</b>.</li>
+        <li>Built <b>REST API backends</b> for restbus/CAN handlers used by Robot Framework, Unified GUI and diagnostic tools; integrated FastAPI, WebSockets and RabbitMQ for communication and diagnostic workflows.</li>
+        <li>Built a <b>Rust CAN Log Parser</b> that processed a <b>2.10 GB / 19.81-million-line log in approximately 3 seconds</b>, with SQLite indexing and reports; optimized Python automation and V-RoboBus workflows.</li>
+        <li>Architected <b>RoboFIT/Robot Framework</b> and reusable Python libraries for hardware/software interaction, integrating Selenium and Appium; reduced manual effort by <b>95%</b>, with adoption by approximately <b>95% of Visteon automation teams globally</b>.</li>
+        <li>Automated <b>Jenkins build, test and deployment pipelines</b> for scheduled hardware flashing, remote-PC execution and emailed reports; reduced manual effort by <b>90%</b> and rolled out across Visteon.</li>
+        <li>Developed <b>JIRA REST API integrations</b> to capture failures, create defects and rerun linked tests on target builds; built a local LLM workflow that generated test cases from requirements in JIRA-standard formats.</li>
+        <li>Built Android-to-DUT Bluetooth/Wi-Fi automation with Python, Robot Framework, Appium and ADB, including automatic log capture; applied data structures and algorithms to optimize runtime and cut manual effort by <b>90%</b>.</li>
+        <li>Maintained pytest unit tests and Playwright end-to-end coverage for authentication, script generation and downloads; participated in code reviews, CI and Agile delivery, and coordinated customer issue resolution with development, DevOps and SRE teams.</li>
       </ul>
+    </div>
+
+    <!-- CODING ACHIEVEMENTS -->
+    <div class="ab-section-title rv">Problem Solving</div>
+    <div class="exp rv">
+      <div class="exp-co">HackerRank · Problem Solving</div>
+      <a class="hr-badge" href="https://www.hackerrank.com/profile/natarajvarun888" target="_blank" rel="noopener noreferrer" aria-label="HackerRank Problem Solving gold badge - view profile">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z" stroke="currentColor" stroke-width="1.5"/><path d="m9 8-4 4 4 4m6-8 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><strong>Problem Solving</strong><small>HackerRank Gold Badge</small></span>
+      </a>
+      <div class="exp-role">301 challenges solved</div>
+      <div class="exp-yr">Rank: 1,070 · Points: 16,605 · Updated 26 Oct 2026</div>
+      <p class="exp-d"><a href="https://www.hackerrank.com/profile/natarajvarun888" target="_blank" rel="noopener noreferrer" style="color:var(--red);text-decoration:underline">View HackerRank profile ↗</a></p>
     </div>
 
     <!-- EDUCATION -->
